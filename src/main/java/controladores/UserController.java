@@ -16,7 +16,7 @@ public class UserController {
         get("/login", (request, response) -> {
             Map<String, Object> attributes = new HashMap<>();
             attributes.put("titulo", "Login");
-            return renderFreemarker(attributes, "/login.ftl");
+            return renderFreemarker(attributes, "/templates/login.ftl");
         });
     }
 }
