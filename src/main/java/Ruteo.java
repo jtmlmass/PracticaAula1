@@ -1,4 +1,3 @@
-import freemarker.template.Configuration;
 import spark.ModelAndView;
 import spark.Spark;
 import spark.template.freemarker.FreeMarkerEngine;
@@ -14,11 +13,7 @@ public class Ruteo {
         return new FreeMarkerEngine().render(new ModelAndView(model, templatePath));
     }
 
-    public void aplicarRuteo(){
-        Configuration configuration=new Configuration(Configuration.getVersion());
-        configuration.setClassForTemplateLoading(Main.class, "/templates/");
-        FreeMarkerEngine freeMarkerEngine = new FreeMarkerEngine(configuration);
-
+    public void aplicarRuteo(FreeMarkerEngine freeMarkerEngine){
         Spark.get("/", (request, response) -> {
             Map<String, Object> attributes = new HashMap<>();
             attributes.put("titulo", "Login");
