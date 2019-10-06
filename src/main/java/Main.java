@@ -4,11 +4,14 @@ import repositorios.UserRepository;
 import spark.*;
 
 import java.util.ArrayList;
+<<<<<<< HEAD
+=======
 import java.util.HashMap;
 import java.util.Map;
 
 import freemarker.template.Configuration;
 import spark.template.freemarker.FreeMarkerEngine;
+>>>>>>> master
 
 import static spark.Spark.*;
 
