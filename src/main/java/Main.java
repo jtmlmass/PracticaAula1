@@ -1,6 +1,4 @@
-import controladores.UserController;
 import modelos.Usuario;
-import repositorios.UserRepository;
 import spark.*;
 
 import java.util.ArrayList;
@@ -17,14 +15,14 @@ public class Main {
         port(8080);
         //indicando los recursos publicos.
         //staticFiles.location("/META-INF/resources"); //para utilizar los WebJars.
-        //staticFiles.location("");
+        staticFiles.location("publico");
 
         ArrayList<Usuario> usuarios = new ArrayList<>();
         Usuario admin = new Usuario("admin", "admin", "José");
         Configuration configuration=new Configuration(Configuration.getVersion());
-        configuration.setClassForTemplateLoading(Main.class, "/templates");
+        configuration.setClassForTemplateLoading(Main.class, "/publico/templates");
         FreeMarkerEngine freeMarkerEngine = new FreeMarkerEngine(configuration);
-
+        //staticFiles.location("/templates");
         Spark.get("/login", (request, response) -> {
             Map<String, Object> attributes = new HashMap<>();
             attributes.put("titulo", "Login");
