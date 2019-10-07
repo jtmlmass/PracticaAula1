@@ -17,10 +17,10 @@
                 <article class="card-body">
                     <a href="" class="float-right btn btn-outline-primary">Sign up</a>
                     <h4 class="card-title mb-4 mt-1">Sign in</h4>
-                    <form action="/login/" method="post"  enctype="application/x-www-form-urlencoded">
+                    <form action="/hacerLogin/" method="post"  enctype="application/x-www-form-urlencoded">
                         <div class="form-group">
                             <label>Username</label>
-                            <input name="matricula" class="form-control" placeholder="Email" type="email">
+                            <input name="username" class="form-control" placeholder="Email" type="email">
                         </div> <!-- form-group// -->
                         <div class="form-group">
                             <label> Password</label>
@@ -29,7 +29,7 @@
                         <div class="form-group">
                         </div> <!-- form-group// -->
                         <div class="form-group">
-                            <button name="Enviar" type="submit" class="btn btn-primary btn-block"> Login  </button>
+                            <button type="submit" class="btn btn-primary btn-block"> Login  </button>
                         </div> <!-- form-group// -->
                     </form>
                 </article>
