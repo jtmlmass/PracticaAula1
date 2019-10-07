@@ -5,8 +5,6 @@ import spark.template.freemarker.FreeMarkerEngine;
 import java.util.HashMap;
 import java.util.Map;
 
-import static spark.Spark.*;
-
 public class Ruteo {
 
     public static String renderFreemarker(Map<String, Object> model, String templatePath) {

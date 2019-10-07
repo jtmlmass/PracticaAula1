@@ -1,6 +1,4 @@
-import controladores.UserController;
 import modelos.Usuario;
-import repositorios.UserRepository;
 import spark.*;
 import java.util.ArrayList;
 import java.util.HashMap;
@@ -16,6 +14,7 @@ public class Main {
         port(8080);
         //indicando los recursos publicos.
         //staticFiles.location("/META-INF/resources"); //para utilizar los WebJars.
+        staticFiles.location("publico");
         //staticFiles.location("");
         Configuration configuration = new Configuration(Configuration.getVersion());
         configuration.setClassForTemplateLoading(Main.class, "/templates");
