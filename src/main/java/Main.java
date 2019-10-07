@@ -1,5 +1,4 @@
 import modelos.Usuario;
-import repositorios.UserRepository;
 import spark.*;
 import java.util.ArrayList;
 import java.util.HashMap;
@@ -27,7 +26,7 @@ public class Main {
             Usuario usuario=request.session(true).attribute("usuario");
             if(usuario==null){
                 //parada del request, enviando un codigo.
-                halt(401, "No tiene permisos para acceder -- D:");
+                response.redirect("/login");
             }
         });
 
@@ -54,7 +53,7 @@ public class Main {
                 //Buscar el usuario en la base de datos..
                 usuario = new Usuario(admin.getUsername(), admin.getPassword(), admin.getNombre());
             }else{
-                halt(401,"Credenciales no validas...");
+                response.redirect("/login");
             }
 
             session.attribute("usuario", usuario);
@@ -70,6 +69,16 @@ public class Main {
             session.invalidate();
             response.redirect("/login");
             return "";
+        });
+
+        Spark.get("/", (request, response)->{
+            Usuario usuario=request.session(true).attribute("usuario");
+            if(usuario==null){
+                response.redirect("/login");
+            }else{
+                response.redirect("/home");
+            }
+           return "";
         });
     }
 }
